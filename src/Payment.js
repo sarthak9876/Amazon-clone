@@ -13,7 +13,7 @@ function Payment() {
 
     const navigate = useNavigate();
     const stripe= useStripe();
-    const element = useElements();
+    const elements = useElements();
     const [{basket, user}, dispatch] = useStateValue();
     const [error, setError] = useState(null);
     const [disabled, setDisabled] = useState(null);
@@ -50,7 +50,7 @@ function Payment() {
         
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
-                card: Elements.getElement(CardElement) 
+                card: elements.getElement(CardElement) 
             }
         }).then(({paymentIntent}) => {
             //paymentIntent = payment confrmation in language of stripe

@@ -3,7 +3,7 @@ import './CheckoutProduct.css';
 import { useStateValue } from './stateProvider';
 
 
-function CheckoutProduct({id, image, title, price, rating}) {
+function CheckoutProduct({id, image, title, price, rating, hideButton}) {
 
     const [{bucket}, dispatch] = useStateValue();
 
@@ -24,14 +24,16 @@ function CheckoutProduct({id, image, title, price, rating}) {
                 <small>₹</small>
                 <strong>{price}</strong>
             </p>
-            <p className='checkoutProduct__rating'>
+            <div className='checkoutProduct__rating'>
                 {Array(rating)
                 .fill()
                 .map((_, i) => (
                 <p>🌟</p>
                 ))}
-            </p>
-            <button onClick={removeFromBasket}>Remove from Basket</button>
+            </div>
+            {!hideButton && (
+                <button onClick={removeFromBasket}>Remove from Basket</button>
+            )}
         </div>
         
     </div>
