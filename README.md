@@ -29,7 +29,7 @@ $ npm install
 **Step 3: Run application**
 
 ```
-(venv) $ npm start
+ $ npm start
 ```
 
 Open http://localhost:3000 (port number is prompted) to view it in your browser.
