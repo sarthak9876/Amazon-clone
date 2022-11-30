@@ -1,7 +1,7 @@
 # Introduction
 This is a clone of Amazon App made using React.js, Node.js, Express, Firebase 
 
-[<img src="https://github.com/Flash2022/StoryBook/blob/main/amazon-clone.gif" width="480" height="270">]
+[<img src="https://github.com/sarthak9876/Amazon-clone/blob/main/amazon-clone.gif" width="480" height="270">]
 
 ## Tools:
 - [Express](https://expressjs.com) - [Node.js](https://nodejs.org) framework
