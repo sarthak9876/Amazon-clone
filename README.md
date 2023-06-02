@@ -36,3 +36,5 @@ $ npm install
 Open http://localhost:3000 (port number is prompted) to view it in your browser.
 The app will automatically reload if you make changes to the code.
 You will see the build errors and warnings in the console.
+
+this is just to check whether the Jenkins SCM is working or not.
