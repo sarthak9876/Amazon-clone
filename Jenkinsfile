@@ -1,5 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:lts-buster-slim'
+            args '-p 3000:3000'
+        }
+    }
+    environment {
+        CI = 'true'
+    }
 
     // this section configures Jenkins options
     options {
@@ -32,17 +40,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                dir("${env.WORKSPACE}/src/"){
-                sh(‘’’
-                    npm install
-                    npm start
-                ‘’’)
-                }
+                sh 'npm install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'npm start'
             }
         }
         stage('Report') {
