@@ -32,6 +32,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                dir("${env.WORKSPACE}/src/"){
+                sh(‘’’
+                    npm install
+                    npm start
+                ‘’’)
+                }
             }
         }
         stage('Test') {
